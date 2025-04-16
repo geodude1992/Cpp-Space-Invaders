@@ -1,5 +1,6 @@
 #include <raylib.h>
 #include "game.hpp"
+#include "laser.hpp"
 
 int main() 
 {
@@ -15,6 +16,7 @@ int main()
 
     // Instantiate game
     Game game;
+    Laser laser = Laser({100, 100}, 7);
 
     // Game Loop
     // 1. Event Handling
@@ -23,10 +25,11 @@ int main()
     while(WindowShouldClose() == false){
 
         game.HandleInput();
-        
+
         BeginDrawing();
         ClearBackground(grey);
         game.Draw();
+        laser.Draw();
 
         EndDrawing();
     }
