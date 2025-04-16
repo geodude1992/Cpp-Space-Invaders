@@ -20,9 +20,17 @@ void Spaceship::Draw()
 void Spaceship::MoveLeft()
 {
     position.x -= 7;
+    // Set left window boundary
+    if(position.x < 0){
+        position.x = 0;
+    }
 }
 
 void Spaceship::MoveRight()
 {
     position.x += 7;
+    // Set right window boundary
+    if(position.x > GetScreenWidth() - image.width){
+        position.x = GetScreenWidth() - image.width;
+    }
 }
