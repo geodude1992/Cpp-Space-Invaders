@@ -21,6 +21,9 @@ int main()
     // 2. Updating Positions
     // 3. Drawing Objects
     while(WindowShouldClose() == false){
+
+        game.HandleInput();
+        
         BeginDrawing();
         ClearBackground(grey);
         game.Draw();
