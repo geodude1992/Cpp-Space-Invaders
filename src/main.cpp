@@ -1,5 +1,5 @@
 #include <raylib.h>
-#include "spaceship.hpp"
+#include "game.hpp"
 
 int main() 
 {
@@ -13,7 +13,8 @@ int main()
     // R,G,B,Alpha(transparency)
     Color grey = {29, 29, 27, 255};
 
-    Spaceship spaceship;
+    // Instantiate game
+    Game game;
 
     // Game Loop
     // 1. Event Handling
@@ -22,7 +23,7 @@ int main()
     while(WindowShouldClose() == false){
         BeginDrawing();
         ClearBackground(grey);
-        spaceship.Draw();
+        game.Draw();
 
         EndDrawing();
     }
