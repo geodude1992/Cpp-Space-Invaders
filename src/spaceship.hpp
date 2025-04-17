@@ -16,4 +16,5 @@ class Spaceship{
     private:
         Texture2D image;
         Vector2 position;   // Raylib vector of 2 components x, y
+        double lastFireTime; // Set fire rate for standard beam
 };

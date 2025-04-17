@@ -5,6 +5,7 @@ Spaceship::Spaceship()
     image = LoadTexture("assets/space-invaders.png");
     position.x = (GetScreenWidth() - image.width)/ 2;  // Set ships x position to middle of screen
     position.y = GetScreenHeight() - image.height;
+    lastFireTime = 0.0;
 }
 
 Spaceship::~Spaceship()
@@ -37,5 +38,9 @@ void Spaceship::MoveRight()
 
 void Spaceship::FireLaser()
 {
-    lasers.push_back(Laser({position.x + image.width/2 - 2, position.y}, -6));  
+    // Firerate 1 shoot per 350ms
+    if(GetTime() - lastFireTime >= 0.35){   
+        lasers.push_back(Laser({position.x + image.width/2 - 2, position.y}, -6));  
+        lastFireTime = GetTime();
+    }
 }
