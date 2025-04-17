@@ -18,7 +18,7 @@ void Game::Update()
     }
 
     DeleteInactiveLasers();
-    std::cout << "Vector Size: " << spaceship.lasers.size() << std::endl;
+    //std::cout << "Vector Size: " << spaceship.lasers.size() << std::endl; // Test lasers are removed from vector
 }
 
 void Game::Draw()
@@ -43,7 +43,7 @@ void Game::HandleInput()
 
 void Game::DeleteInactiveLasers()
 {
-    // Remove inactive lasers
+    // Remove inactive lasers for vector 
     for(auto it = spaceship.lasers.begin(); it != spaceship.lasers.end();){
         if(!it -> active){
             it = spaceship.lasers.erase(it);
